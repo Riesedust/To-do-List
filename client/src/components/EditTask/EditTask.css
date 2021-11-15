@@ -1,6 +1,6 @@
 .button-container{
-    width: 200px;
-    margin-left: 330px;
     display: flex;
     justify-content: space-around;
+    width: 200px;
+    margin-left: 580px;
 }
