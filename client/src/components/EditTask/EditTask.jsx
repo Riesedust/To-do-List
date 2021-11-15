@@ -5,6 +5,7 @@ import { connect, useDispatch } from 'react-redux'
 import * as actionCreators from '../../actions/actions'
 import { editTodo } from '../../actions/actions'
 import {bindActionCreators} from 'redux'
+import "./EditTask.css"
 const URL= "http://localhost:3001/todo"
 
 
@@ -48,8 +49,12 @@ function EditTask(props) {
         <form onSubmit={onSubmit}>
             <h4>Edit task "{task.name}"</h4>
             <input type="text" placeholder="Set new task" value={form.name }name="name" onChange={handleChange}/>
-            <input type="submit" name="Save"/>
-            <Link to="/">Cancel</Link>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <input type="submit" name="Save"/>
+                <button className="button-cancel"> <Link to="/" >Cancel</Link> </button>
+            </div> 
         </form>:
 
         <h1>Loading...</h1>

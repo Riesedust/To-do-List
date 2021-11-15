@@ -4,6 +4,7 @@ import { getTodo } from '../../actions/actions';
 import {connect} from 'react-redux'
 import Todo from '../Todo/Todo'
 import NewTask from '../NewTask/NewTask';
+import "./ListTodo.css"
 
 function ListTodo({getTodo, todos}) {
     useEffect(() => {
@@ -11,8 +12,11 @@ function ListTodo({getTodo, todos}) {
     }, [getTodo])
 
     return (
-        <div>
-            <Todo todos={todos}/>
+        <div className="container">
+            <div className="todo-container" >
+                <Todo todos={todos}/>
+            </div>
+            <br/>
             <NewTask />
         </div>
     )

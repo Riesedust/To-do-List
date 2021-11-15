@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionCreators from '../../actions/actions'
 import {bindActionCreators} from 'redux'
+import "./Todo.css"
 
 function Todo(props) {
-
-
     return (props.todos.map(e =>
-        <div>
+        <div className="individual-todo">
             <input type="checkbox"/>
             <label>{e.name}</label>
             <Link to={`/${e.id}`}>Edit</Link>
