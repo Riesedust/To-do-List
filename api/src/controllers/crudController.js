@@ -25,6 +25,18 @@ async function getTodo(req, res, next){
     }
 }
 
+async function getTodoById(req, res, next){
+    try {
+        const {idTodo}= req.params
+        let todo= await Todo.findByPk(idTodo)
+
+        res.json(todo)
+
+    } catch (error) {
+        next(error)
+    }
+}
+
 async function editTodo(req, res, next){
     try {
         const {name}= req.body
@@ -60,6 +72,7 @@ async function removeTodo(req, res, next){
 module.exports = {
     addTodo,
     getTodo,
+    getTodoById,
     editTodo,
     removeTodo
 }
